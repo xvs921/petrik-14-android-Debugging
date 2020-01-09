@@ -19,13 +19,16 @@ public class ThirdActivity extends AppCompatActivity {
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(ThirdActivity.this, Menu.class);
+                startActivity(intent);
                 finish();
             }
         });
+
     }
 
     public void init()
     {
-        buttonBack = findViewById(R.id.buttonExit);
+        buttonBack = findViewById(R.id.buttonBack);
     }
 }

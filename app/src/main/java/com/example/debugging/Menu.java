@@ -39,12 +39,12 @@ public class Menu extends AppCompatActivity implements View.OnClickListener{
     {
         buttonExit = findViewById(R.id.buttonExit);
         buttonInformation = findViewById(R.id.buttonInformation);
-        buttonNameChange = findViewById(R.id.buttonBack);
+        buttonNameChange = findViewById(R.id.buttonNameChange);
         buttonNext = findViewById(R.id.buttonNext);
         textViewName = findViewById(R.id.textViewName);
 
         SharedPreferences sharedPreferences = getSharedPreferences("Adatok", Context.MODE_PRIVATE);
-        seged = sharedPreferences.getString("Nev","Nincs elmentve a neved!");
+        seged = sharedPreferences.getString("nev","Nincs elmentve a neved!");
         textViewName.setText(seged);
 
 
@@ -86,6 +86,7 @@ public class Menu extends AppCompatActivity implements View.OnClickListener{
                 Toast.makeText(this, "A neved:" + seged, Toast.LENGTH_SHORT).show();
                 break;
             case R.id.buttonExit:
+                alertDialog.show();
                 break;
             case R.id.buttonNext:
                 Intent next = new Intent(Menu.this,ThirdActivity.class);
